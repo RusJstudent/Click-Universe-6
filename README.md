@@ -1,1 +1,1 @@
-# Click-Universe-6
+https://rusjstudent.github.io/Click-Universe-6/
