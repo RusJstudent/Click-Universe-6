@@ -1,0 +1,509 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(../images/bg.jpg) no-repeat;
+    z-index: -1;
+    overflow: hidden;
+
+    font-size: 15px;
+    font-family: sans-serif;
+
+    cursor: default;
+
+    touch-action: none;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+
+    font-family: 'Azeret Mono', monospace;
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+/* profile */
+
+.profile {
+    width: 400px;
+    background-color: rgba(110, 110, 255, 0.1);
+    position: relative;
+    left: 100%;
+    margin-left: -400px;
+    margin-bottom: 10px;
+    z-index: 100;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 2px;
+    z-index: -1;
+}
+
+.profile__elem {
+    width: 50%;
+    margin: 0.1em 0;
+}
+
+.profile__value {
+    position: relative;
+    left: -3px;
+}
+
+.profile__rnk {
+    letter-spacing: -0.05em;
+}
+
+.stats {
+    color: rgb(92, 92, 233);
+    font-size: 1.25em;
+}
+
+/* .profile__value {
+    padding-left: 0.08em;
+}
+
+.profile__rnk {
+    letter-spacing: 0.05em;
+} */
+
+
+/* ship */
+
+.ship {
+    font-family: Arial, Helvetica;
+}
+
+.ship-wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ship__above {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    top: -18px;
+}
+
+.ship__damage {
+    position: absolute;
+    color: rgb(204, 151, 5);
+    letter-spacing: 0.1em;
+    top: 50%;
+    left: 50%;
+    margin-top: -2em;
+    margin-left: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    z-index: 10;
+    transition: ease 0.5s;
+    opacity: 0;
+    animation-name: damage;
+    animation-duration: 1.5s;
+    z-index: 1000;
+    text-shadow: 0.15em 0 0.15em #000, 
+    0 0.15em 0.15em #000, 
+    -0.15em 0 0.15em #000, 
+    0 -0.15em 0.15em #000;
+}
+
+.ship__repair {
+    color: rgb(0, 107, 27);
+}
+
+@keyframes damage {
+    from {
+        opacity: 100%;
+        font-size: 1em;
+    }
+
+    10% {
+        opacity: 100%;
+    }
+
+    60% {
+        margin-top: -6.4em;
+        margin-left: 2.2em;
+        opacity: 100%;
+    }
+
+    89% {
+        opacity: 20%;
+    }
+
+
+    to {
+        margin-top: -6.4em;
+        margin-left: 2.2em;
+        opacity: 0;
+        font-size: 2.1em;
+    }
+}
+
+.ship__hp {
+    width: 125px;
+    height: 5.5px;
+    position: relative;
+    background: #000;
+    margin-bottom: 2px;
+}
+
+.ship__hp-line {
+    width: 100%;
+    height: 100%;
+    background: green;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.2s linear;
+}
+
+.ship__sh-line {
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 67, 212);
+    transition: 0.2s linear;
+}
+
+.ship__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0deg);
+}
+
+.ship__below {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ship__warrank {
+    position: relative;
+}
+
+.ship__warrank img {
+    position: absolute;
+    left: -36px;
+    top: -18px;
+}
+
+.ship__nickname {
+    font-size: 1.3em;
+    color: white;
+    letter-spacing: 1.9px;
+}
+
+.ship__bottom {
+    font-size: 0.9em;
+    text-align: center;
+    letter-spacing: 1.2px;
+    color: white;
+}
+
+.hitpoints {
+    margin-bottom: 1px;
+}
+
+#ranks {
+    background: url(../images/icons/ranks.png) no-repeat;
+    height: 32px;
+    width: 20px;
+    position: relative;
+    top: 6px;
+    left: -6px;
+}
+
+#ranks.rank1 {
+    background-position: -140px 0;
+}
+
+#ranks.rank2 {
+    background-position: -180px 0;
+}
+
+#ranks.rank3 {
+    background-position: -60px 0;
+}
+
+#ranks.rank4 {
+    background-position: -120px 0;
+}
+
+#ranks.rank5 {
+    background-position: -220px 0;
+}
+
+#ranks.rank6 {
+    background-position: -20px 0;
+}
+
+#ranks.rank7 {
+    background-position: -80px 0;
+}
+
+#ranks.rank8 {
+    background-position: 0 0;
+}
+
+#ranks.rank9 {
+    background-position: -160px 0;
+}
+
+#ranks.rank10 {
+    background-position: -100px 0;
+}
+
+#ranks.rankO {
+    background-position: -200px 0;
+}
+
+#ranks.rankA {
+    background-position: -40px 0;
+}
+
+
+/* pve */
+
+.pve {
+    position: fixed;
+    left: 100%;
+    top: 5.6em;
+    margin-left: -140px;
+}
+
+.pve__container {
+    height: 100%;
+    width: 100%;
+}
+
+.pve button {
+    background-color: white;
+    width: 80px;
+    margin: 0 25px;
+}
+
+.pve button:hover {
+    background-color:rgb(255, 72, 0);
+}
+
+.pve__description {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+}
+
+.pve__description-text {
+    color: white;
+    font-size: 1.2em;
+}
+
+.pve__row {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0 5px 5px 5px;
+}
+
+.pve__enemies {
+    font-size: 1.3em;
+    color:rgba(45, 117, 96);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.pve__enemy {
+    margin: 3px 0;
+}
+
+.pve__enemy button {
+    padding: 3px;
+    border-radius: 5px;
+}
+
+
+/* information */
+
+.info {
+    position: fixed;
+    left: 100%;
+    top: 100%;
+    margin-left: -90px;
+    margin-top: -104px;
+}
+
+.info button {
+    background-color: rgb(202, 202, 202);
+}
+
+.info button:hover {
+    background-color:rgb(40, 202, 0);
+}
+
+.info button {
+    display: inline-block;
+    margin-bottom: 3px;
+    padding: 2px;
+}
+
+
+/* shop */
+
+.shop {
+    position: absolute;
+    background: rgba(136, 48, 121, 0.3);
+}
+
+.shop button:hover {
+    background-color:rgba(255, 177, 8)
+}
+
+.shop__description {
+    font-size: 1.3em;
+    text-align: center;
+    color: rgb(27, 255, 198);
+    padding: 0.5em 0;
+}
+
+.shop__items {
+    font-size: 25px;
+    color: red;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.shop__buttons {
+    position: relative;
+    top: -14px;
+    margin-left: -10px;
+    display: inline-block;
+}
+
+.shop__button {
+    position: relative;
+}
+
+.shop__buy {
+    padding: 2px;
+}
+
+.shop__sell {
+    top: 3px;
+}
+
+.auto {
+    position: fixed;
+    top: 100%;
+    margin-top: -61px;
+    left: 1px;
+}
+
+.auto__button {
+    width: 120px;
+    height: 60px;
+    background: rgb(204, 0, 85);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.auto__button-off {
+    background: rgb(0, 79, 182);
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 12px;
+    }
+
+    .profile {
+        width: 300px;
+        margin-left: -300px;
+    }
+
+    .ship__image img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .ship__hp {
+        width: 85px;
+    }
+
+    .ship__nickname {
+        letter-spacing: 1.2px;
+    }
+
+    .shop-button {
+        top: -9px;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        font-size: 10px;
+    }
+
+    .profile {
+        width: 200px;
+        margin-left: -200px;
+    }
+
+    .profile__exp {
+        font-size: 0.8em;
+    }
+
+    .ship__image img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .ship__hp {
+        width: 75px;
+    }
+
+    .pve {
+        margin-left: -110px;
+    }
+
+    .pve button {
+        margin: 0 10px;
+    }
+
+    .shop {
+        width: 125px;
+    }
+
+    .shop__button {
+        position: absolute;
+        top: -25px;
+    }
+
+    .shop__sell {
+        left: 43px;
+        top: -18px;
+    }
+}
